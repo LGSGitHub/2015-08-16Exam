@@ -1,0 +1,9 @@
+本项目使用的数据库是sakila，用户名是root，密码为空
+1、把项目从GitHub克隆到本地
+mvn clean
+mvn compile
+mvn tomcat:run
+2、打开浏览器，输入http://localhost:8080/2015-08-16Exam/login.jsp
+3、输入客户名，点击登录
+4、跳转到首页，点击“查看电影信息”链接
+5、可选择：页面头部的“添加电影信息”链接，查询到的电影信息后面有“编辑”和“删除”操作
