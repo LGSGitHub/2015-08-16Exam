@@ -50,13 +50,21 @@ public class UpdateFilmServlet extends HttpServlet {
 		ResultSet rsF;
 		FilmDaoImpl fdi = new FilmDaoImpl();
 		List<String> filmList = new ArrayList<String>();
+		
 		try {
 			rsF = fdi.getFilmById(conn, film);
-			while(rsF.next())
-			{
-				filmList.add(rsF.getString("title"));
-				filmList.add(rsF.getString("description"));
-			}
+//			System.out.println("test+++++++++++++");
+//			System.out.println(rsF.getString("title"));
+//			System.out.println(rsF.getString("description"));
+			String title = rsF.getString("title");
+			String description = rsF.getString("description");
+			filmList.add(title);
+			filmList.add(description);
+//			while(rsF.next())
+//			{
+//				filmList.add(rsF.getString("title"));
+//				filmList.add(rsF.getString("description"));
+//			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -74,6 +82,7 @@ public class UpdateFilmServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		request.setAttribute("film_id", film_id);
 		request.setAttribute("filmList", filmList);
 		request.setAttribute("languageList", languageList);
 		rd = request.getRequestDispatcher("updateFilm.jsp");

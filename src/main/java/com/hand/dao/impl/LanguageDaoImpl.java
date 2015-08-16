@@ -25,7 +25,6 @@ public class LanguageDaoImpl {
 		ResultSet rs;
 		
 		try {
-			
 			ps = conn.prepareStatement("select language_id from language where name=?");
 			ps.setString(1, name);
 			rs = ps.executeQuery();
@@ -36,6 +35,7 @@ public class LanguageDaoImpl {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		System.out.println("tesssssssssssss");
 		return null;
 	}
 }

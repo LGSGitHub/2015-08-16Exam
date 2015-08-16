@@ -44,6 +44,7 @@ public class DoUpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String film_id = request.getParameter("film_id");
 		String title = request.getParameter("title");
 		String description = request.getParameter("description");
 		String language = request.getParameter("language");
@@ -62,6 +63,7 @@ public class DoUpdateServlet extends HttpServlet {
 		film.setTitle(title);
 		film.setDescription(description);
 		film.setLanguage_id(Long.parseLong(language_id));
+		film.setFilm_id(Long.parseLong(film_id));
 
 		FilmDaoImpl fd = new FilmDaoImpl();
 		try {

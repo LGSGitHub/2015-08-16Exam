@@ -9,18 +9,21 @@
 <title>更新电影信息</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath()%>/DoUpdateFilmServlet"
-		method="post">
+	<form action="<%=request.getContextPath()%>/DoUpdateServlet" method="post">
 		<center>
 			<table>
 				<%
 					List<String> flist = new ArrayList<String>();
 					flist = (ArrayList) request.getAttribute("filmList");
-					for (int i = 0; i < flist.size(); i++) {
+					//for (int i = 0; i < flist.size(); i++) {
 				%>
 				<tr>
-
+				<td>film_id</td>
+				<td><input type="text" name="film_id" readonly="readonly" value="<%= request.getAttribute("film_id")%>"/></td>
+				</tr>
+				<tr>
 					<td>title</td>
+
 					<td><input type="text" name="title" value="<%=flist.get(0)%>" /></td>
 				</tr>
 				<tr>
@@ -29,7 +32,7 @@
 						value="<%=flist.get(1)%>" /></td>
 				</tr>
 				<%
-					}
+					//}
 				%>
 				<tr>
 					<td>language</td>
