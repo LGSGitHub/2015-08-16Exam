@@ -1,5 +1,6 @@
-com\hand\servlet\AddFilmServlet.class
 com\hand\servlet\DoUpdateServlet.class
+com\hand\servlet\AddFilmServlet.class
+com\hand\filter\PermissionFilter.class
 com\hand\servlet\DoAddFilmServlet.class
 com\hand\servlet\UpdateFilmServlet.class
 com\hand\dao\impl\LanguageDaoImpl.class
@@ -9,6 +10,7 @@ com\hand\entity\Customer.class
 com\hand\dao\impl\CustomerDaoImpl.class
 com\hand\servlet\DeleteFilmServlet.class
 com\hand\servlet\getFilmServlet.class
+com\hand\servlet\LogoutServlet.class
 com\hand\dao\impl\FilmDaoImpl.class
 com\hand\servlet\LoginServlet.class
 com\hand\entity\Language.class

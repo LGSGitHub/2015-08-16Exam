@@ -24,5 +24,22 @@ public class CustomerDaoImpl {
 		return false;
 
 	}
+	public ResultSet getCustomer(Connection conn, String first_name) {
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+
+			ps = conn.prepareStatement("select * from customer where first_name=?");
+			ps.setString(1, first_name);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				return rs;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+
+	}
 
 }
